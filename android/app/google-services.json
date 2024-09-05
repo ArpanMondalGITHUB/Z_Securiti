@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "249430847916",
+    "project_id": "khanakhazana-f5c79",
+    "storage_bucket": "khanakhazana-f5c79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249430847916:android:c959bd483b0499fdc14a09",
+        "android_client_info": {
+          "package_name": "com.example.khanakhazana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp-R8RrIeEn26bDVJxk93Mlp0EFfobEEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
