@@ -8,7 +8,4 @@ class LocationEntities {
     required this.address,
     required this.latitude,
   });
-
-
-
 }

@@ -6,10 +6,10 @@ class LocationModel extends LocationEntities {
       required super.address,
       required super.latitude,});
 
-  factory LocationModel.fromGeolocation(Map<String, dynamic> fromgeolocator) {
+  factory LocationModel.fromgeoCoder2(Map<String, dynamic> fromgeoCoder2) {
     return LocationModel(
-        longitude: fromgeolocator['longitude'],
-        address: fromgeolocator['adress'],
-        latitude: fromgeolocator['latitude'],);
+        longitude: fromgeoCoder2['longitude'],
+        address: fromgeoCoder2['adress'],
+        latitude: fromgeoCoder2['latitude'],);
   }
 }

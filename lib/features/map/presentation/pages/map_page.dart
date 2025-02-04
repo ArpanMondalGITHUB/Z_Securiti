@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:khanakhazana/features/map/presentation/bloc/current_location_bloc.dart';
 import 'package:khanakhazana/features/map/presentation/pages/user_location_page.dart';
 
 class MapScreen extends StatefulWidget {
@@ -11,6 +13,11 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreenState extends State<MapScreen> {
   late GoogleMapController _controller;
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   void dispose() {
     _controller.dispose();
@@ -36,8 +43,9 @@ class _MapScreenState extends State<MapScreen> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => UserLocationPage(),
+                builder: (context) =>const UserLocationPage(),
               ));
+              GetIt.I<CurrentLocationBloc>().add(FetchCurrentLocation());
         },
         child: const Icon(
           Icons.location_on,
