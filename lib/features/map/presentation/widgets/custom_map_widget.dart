@@ -16,9 +16,8 @@ class CustomMapWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
-      height: 200.0,
+      height: 250,
       margin: const EdgeInsets.all(10.0),
       child: GoogleMap(
         initialCameraPosition: CameraPosition(
@@ -26,12 +25,13 @@ class CustomMapWidget extends StatelessWidget {
           zoom: 14.0,
         ),
         markers: {
-           Marker(
+          Marker(
             markerId: MarkerId(markerId ?? 'default-marker'),
             position: LatLng(latitude, longitude),
             infoWindow: InfoWindow(
               title: infoWindow ?? 'Location',
-            ),),
+            ),
+          ),
         },
       ),
     );

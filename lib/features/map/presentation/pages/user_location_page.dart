@@ -15,6 +15,12 @@ class UserLocationPage extends StatefulWidget {
 
 class _UserLocationPageState extends State<UserLocationPage> {
   @override
+  void initState() {
+    super.initState();
+    GetIt.I<CurrentLocationBloc>().add(FetchCurrentLocation());
+  }
+
+  @override
   Widget build(BuildContext context) {
     final locationbloc = GetIt.I<CurrentLocationBloc>();
     return Scaffold(
@@ -22,24 +28,40 @@ class _UserLocationPageState extends State<UserLocationPage> {
         bloc: locationbloc,
         listener: (context, state) {
           if (state is CurrenLocationLoadingFailed) {
-             return showSnakBar(context,state.message);
+            return showSnakBar(context, state.message);
           }
         },
         builder: (context, state) {
           if (state is CurrentLocationLoading) {
-            return Center(
+            return const Center(
               child: Loader(),
             );
           } else if (state is CurrentLocationLoaded) {
             return Column(
               children: [
-                CustomMapWidget(
-                  latitude: state.location.latitude,
-                  longitude: state.location.longitude,
-                  markerId: 'user-location',
-                  infoWindow: 'your_location',
+                Expanded(
+                  flex: 3,
+                  child: CustomMapWidget(
+                    latitude: state.location.latitude,
+                    longitude: state.location.longitude,
+                    markerId: 'user-location',
+                    infoWindow: 'your_location',
+                  ),
                 ),
-                Text('Address: ${state.location.timestamp}'),
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      'Address: ${state.location.address}',
+                      style: const TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             );
           }

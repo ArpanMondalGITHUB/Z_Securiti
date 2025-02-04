@@ -12,14 +12,16 @@ final class CurrentLocationInitial extends CurrentLocationState {}
 class CurrentLocationLoading extends CurrentLocationState {}
 
 class CurrentLocationLoaded extends CurrentLocationState {
-  final Location location;
+  final LocationEntities location;
 
- const CurrentLocationLoaded(this.location);
+  const CurrentLocationLoaded(this.location);
+
+  @override
+  List<Object> get props => [location];
 }
 
 class CurrenLocationLoadingFailed extends CurrentLocationState {
   final String message;
 
- const CurrenLocationLoadingFailed(this.message);
-
+  const CurrenLocationLoadingFailed(this.message);
 }

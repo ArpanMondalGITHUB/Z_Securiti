@@ -25,12 +25,12 @@ final appthemeData = {
       contentPadding: const EdgeInsets.all(27),
       filled: false, // we can dete this it upon to us
       fillColor: Colors.grey[900],
-      hintStyle: TextStyle(color: Colors.black),
-      labelStyle: TextStyle(color: Colors.white70),
+      hintStyle: const TextStyle(color: Colors.black),
+      labelStyle: const TextStyle(color: Colors.white70),
       enabledBorder: border(),
       focusedBorder: border(Appallete.gradient2),
     ),
-    textTheme: TextTheme(titleMedium: TextStyle(color: Appallete.titleMediumtexttheme),)
+    textTheme: const TextTheme(titleMedium: TextStyle(color: Appallete.titleMediumtexttheme),)
 
   
   ),
@@ -43,7 +43,7 @@ final appthemeData = {
       color: Colors.black,
     ),
 
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyLarge: TextStyle(color: Appallete.whiteColor),
       bodyMedium: TextStyle(color:Appallete.whiteColor),
       displayLarge: TextStyle(color: Appallete.whiteColor),
@@ -56,7 +56,7 @@ final appthemeData = {
       // caption: TextStyle(color: Colors.white70),
       // overline: TextStyle(color: Colors.white70),
     ),
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Appallete.whiteColor,
     ),
     buttonTheme: ButtonThemeData(
@@ -71,8 +71,8 @@ final appthemeData = {
       contentPadding: const EdgeInsets.all(27),
       filled: true, // we can dete this it upon to us
       fillColor: Colors.grey[900],
-      hintStyle: TextStyle(color: Colors.white70),
-      labelStyle: TextStyle(color: Colors.white70),
+      hintStyle: const TextStyle(color: Colors.white70),
+      labelStyle: const TextStyle(color: Colors.white70),
       enabledBorder: border(),
       focusedBorder: border(Appallete.gradient2),
     ),

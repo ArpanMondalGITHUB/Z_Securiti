@@ -2,7 +2,7 @@ part of 'theme_bloc.dart';
 
 class ThemeState extends Equatable {
   final Apptheme theme;
-   ThemeState({
+  const ThemeState({
     required this.theme,
   });
   ThemeState copyWith( { Apptheme? theme}){
